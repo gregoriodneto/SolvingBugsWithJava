@@ -1,4 +1,4 @@
-package org.greg.GameServerCoin;
+package org.greg.GameServerCoin.Entities;
 
 public class Reward {
     private int coins;
@@ -7,6 +7,14 @@ public class Reward {
     public Reward(int coins, int xp) {
         this.coins = coins;
         this.xp = xp;
+    }
+
+    public void addCoinsPercent(int percent) {
+        coins += coins * percent / 100;
+    }
+
+    public void addXpPercent(int percent) {
+        xp += xp * percent / 100;
     }
 
     public void addCoins(int coins) {
@@ -23,5 +31,9 @@ public class Reward {
 
     public int getXp() {
         return xp;
+    }
+
+    public void resetCoins() {
+        coins = 0;
     }
 }
